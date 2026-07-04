@@ -8,11 +8,22 @@ Store Pickup / Own Rider / Zepto / Blinkit delivery.
 
 import streamlit as st
 import pandas as pd
+import runpy
+from pathlib import Path
 from datetime import datetime
 
 import db
 
 st.set_page_config(page_title="MedMarket India", layout="wide", page_icon="💊")
+
+# ----------------------------------------------------------------------
+# Auto-initialize the database on first run (e.g. fresh Streamlit Cloud
+# deploy where init_db.py was never run manually on the server).
+# ----------------------------------------------------------------------
+if not db.database_is_initialized():
+    with st.spinner("Setting up the database for the first time..."):
+        runpy.run_path(str(Path(__file__).parent / "init_db.py"), run_name="__main__")
+    st.rerun()
 
 # ----------------------------------------------------------------------
 # Session state defaults
