@@ -9,6 +9,7 @@ import hashlib
 from pathlib import Path
 
 DB_PATH = Path(__file__).parent / "data" / "pharmacy_marketplace.db"
+DB_PATH.parent.mkdir(parents=True, exist_ok=True)  # make sure data/ exists on any machine/server
 
 
 def get_connection():
@@ -16,6 +17,20 @@ def get_connection():
     conn.row_factory = sqlite3.Row
     conn.execute("PRAGMA foreign_keys = ON")
     return conn
+
+
+def database_is_initialized() -> bool:
+    """Checks whether the schema has already been created."""
+    if not DB_PATH.exists():
+        return False
+    conn = sqlite3.connect(DB_PATH)
+    try:
+        result = conn.execute(
+            "SELECT name FROM sqlite_master WHERE type='table' AND name='users'"
+        ).fetchone()
+        return result is not None
+    finally:
+        conn.close()
 
 
 def hash_password(password: str) -> str:
