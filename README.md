@@ -1,4 +1,5 @@
 # MedMarket India — Pharmacy Marketplace Platform
+https://pharmacy-fwhxdvbujhrhremj5sfvv4.streamlit.app/
 
 An Amazon-style two-sided marketplace for pharmacies in India: pharmacies
 register, list products with MRP/discount pricing, and manage their store
@@ -78,7 +79,7 @@ production app you'd add it to `.gitignore` and use a hosted database instead.
 
 You'll get a public URL like:
 ```
-https://<your-username>-pharmacy-marketplace.streamlit.app
+[https://<your-username>-pharmacy-marketplace.streamlit.app](https://pharmacy-fwhxdvbujhrhremj5sfvv4.streamlit.app/)
 ```
 **Note:** on Streamlit Cloud, the database resets on redeploys/restarts since
 it's a local SQLite file, not a persistent hosted database — fine for a demo,
