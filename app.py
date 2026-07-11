@@ -1,10 +1,4 @@
-"""
-Pharmacy Marketplace — India
-An Amazon-style two-sided marketplace: pharmacies register, list products
-with MRP/discount pricing, and manage their store; customers browse across
-all pharmacies, add to cart, and check out with COD/UPI/Card and
-Store Pickup / Own Rider / Zepto / Blinkit delivery.
-"""
+
 
 import streamlit as st
 import pandas as pd
@@ -14,7 +8,7 @@ from datetime import datetime
 
 import db
 
-st.set_page_config(page_title="MedMarket India", layout="wide", page_icon="💊")
+st.set_page_config(page_title="MedMarket India", layout="wide", page_icon="§")
 
 # ----------------------------------------------------------------------
 # Auto-initialize the database on first run (e.g. fresh Streamlit Cloud
@@ -46,7 +40,7 @@ def landing_page():
     st.markdown(
         """
         <div style="background: linear-gradient(90deg,#0f766e,#0d9488); padding: 40px 30px; border-radius: 10px; color: white;">
-            <h1 style="margin:0;">💊 MedMarket India</h1>
+            <h1 style="margin:0;"> MedMarket India</h1>
             <h3 style="font-weight:400; margin-top:5px;">Genuine medicines. Real discounts. Delivered fast — from your neighbourhood pharmacy.</h3>
         </div>
         """,
@@ -91,8 +85,8 @@ def landing_page():
 
         st.info(
             "**Demo logins:**\n\n"
-            "- Pharmacy: `shreepharmacy` / `pharma123`\n"
-            "- Customer: `customer1` / `customer123`"
+          #--- "- Pharmacy: `shreepharmacy` / `pharma123`\n"
+           #--- "- Customer: `customer1` / `customer123`" 
         )
 
     # ---- Customer registration ----
