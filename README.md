@@ -1,5 +1,5 @@
 # MedMarket India — Pharmacy Marketplace Platform
-https://pharmacy-fwhxdvbujhrhremj5sfvv4.streamlit.app/
+https://mpharmacy.streamlit.app/
 
 An Amazon-style two-sided marketplace for pharmacies in India: pharmacies
 register, list products with MRP/discount pricing, and manage their store
